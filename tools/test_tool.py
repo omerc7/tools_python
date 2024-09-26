@@ -1,4 +1,5 @@
 from kubiya_sdk.tools.models import Tool, Arg
+from kubiya_sdk.tools.registry import tool_registry
 
 hello_tool = Tool(
     name="hello",
@@ -8,3 +9,6 @@ hello_tool = Tool(
     args=[Arg(name="name", description="Name to greet", required=True)],
     content="python -c \"print(f'Hello {name}')\"",
 )
+
+
+tool_registry.register("hello", hello_tool)
