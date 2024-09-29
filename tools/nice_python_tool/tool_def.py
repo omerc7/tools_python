@@ -14,13 +14,7 @@ hello_tool = Tool(
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
-curl -LsSf https://astral.sh/uv/install.sh | sh
-. $HOME/.cargo/env
-
-uv venv
-. .venv/bin/activate
-
-uv pip install -r /tmp/requirements.txt
+pip install -r /tmp/requirements.txt
 
 python /tmp/main.py
 """,
