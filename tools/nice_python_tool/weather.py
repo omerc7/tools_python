@@ -33,7 +33,6 @@ def get_weather(latitude, longitude):
 
     # Extract and display weather data
     current_weather = data.get("current_weather", {})
-    print(current_weather)
     return WeatherOutput(**current_weather)
 
 
