@@ -10,15 +10,15 @@ from . import main
 hello_tool = Tool(
     name="get_weather",
     type="docker",
-    image="python:3.11",
+    image="python:3.12",
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
 apt-get update && apt-get install -y \
     build-essential \
-    gcc \
     python3-dev \
-    libssl-dev
+    libssl-dev \
+    libffi-dev
     
 curl -LsSf https://astral.sh/uv/install.sh | sh
 . $HOME/.cargo/env
