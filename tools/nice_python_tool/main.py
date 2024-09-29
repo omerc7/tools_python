@@ -1,8 +1,8 @@
-import httpx
+import requests
 
 
 def get_weather():
-    return httpx.get(
+    return requests.get(
         "https://api.open-meteo.com/v1/forecast?latitude=32.0809&longitude=34.7806&hourly=temperature_2m"
     )
 
