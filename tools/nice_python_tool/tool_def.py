@@ -10,8 +10,8 @@ hello_tool = Tool(
     name="get_weather",
     type="docker",
     image="python:3.12",
-    description="Prints the weather",
-    # args=[Arg(name="name", description="Name to greet", required=True)],
+    description="Prints the weather for a city",
+    args=[Arg(name="city", description="City name to get weather for", required=True)],
     content="""
 curl -LsSf https://astral.sh/uv/install.sh | sh > /dev/null 2>&1
 . $HOME/.cargo/env
@@ -21,7 +21,7 @@ uv venv > /dev/null 2>&1
 
 uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
 
-python /tmp/main.py
+python /tmp/main.py {{ .city }}
 """,
     with_files=[
         FileSpec(
