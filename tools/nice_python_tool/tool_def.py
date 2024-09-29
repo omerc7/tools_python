@@ -21,7 +21,7 @@ uv venv > /dev/null 2>&1
 
 uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
 
-python /tmp/main.py {{ .city }}
+python /tmp/main.py "{{ .city }}"
 """,
     with_files=[
         FileSpec(
