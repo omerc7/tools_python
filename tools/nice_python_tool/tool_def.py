@@ -10,7 +10,7 @@ from . import main
 hello_tool = Tool(
     name="get_weather",
     type="docker",
-    image="python:3.12",
+    image="python:3.12-alpine",
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
@@ -26,8 +26,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 . .venv/bin/activate
 
-uv 
-pip install -r /tmp/requirements.txt
+uv pip install -r /tmp/requirements.txt
 
 python /tmp/main.py
 """,
