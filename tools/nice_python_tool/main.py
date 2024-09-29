@@ -3,8 +3,6 @@ import argparse
 import requests
 import pydantic
 
-from .weather import get_weather_city
-
 
 class WeatherOutput(pydantic.BaseModel):
     temperature: float
