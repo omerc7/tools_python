@@ -13,14 +13,23 @@ hello_tool = Tool(
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
-pip install -r /tmp/requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh > /dev/null 2>&1
+. $HOME/.cargo/env
+
+uv venv > /dev/null 2>&1
+. .venv/bin/activate > /dev/null 2>&1
+
+uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
 
 python /tmp/main.py
 """,
     with_files=[
         FileSpec(
             destination="/tmp/requirements.txt",
-            content="requests==2.32.3",
+            content="""
+requests==2.32.3
+pydantic==2.9.2
+""",
         ),
         FileSpec(
             destination="/tmp/main.py",
