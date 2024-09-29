@@ -14,7 +14,7 @@ hello_tool = Tool(
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
-pip install -r /tmp/requirements.txt
+pip install -r /tmp/requirements.txt --no-cache-dir
 
 python /tmp/main.py
 """,
