@@ -14,7 +14,7 @@ hello_tool = Tool(
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
-RUN apt-get update && apt-get install -y \
+apt-get update && apt-get install -y \
     build-essential \
     gcc \
     python3-dev \
