@@ -25,7 +25,7 @@ python /tmp/main.py
 """,
     with_files=[
         FileSpec(
-            destination="/tmp/requirements.text",
+            destination="/tmp/requirements.txt",
             content=Path("./requirements.txt").read_text(),
         ),
         FileSpec(
