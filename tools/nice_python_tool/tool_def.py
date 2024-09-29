@@ -15,10 +15,10 @@ hello_tool = Tool(
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
 curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.cargo/env
+. $HOME/.cargo/env
 
 uv venv
-source venv/bin/activate
+. venv/bin/activate
 
 uv pip install -r /tmp/requirements.txt
 
