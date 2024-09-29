@@ -18,7 +18,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 . $HOME/.cargo/env
 
 uv venv
-. venv/bin/activate
+. .venv/bin/activate
 
 uv pip install -r /tmp/requirements.txt
 
