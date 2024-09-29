@@ -1,5 +1,4 @@
 import inspect
-from pathlib import Path
 
 
 from kubiya_sdk.tools.models import Tool, Arg, FileSpec
@@ -21,7 +20,7 @@ python /tmp/main.py
     with_files=[
         FileSpec(
             destination="/tmp/requirements.txt",
-            content=Path("./requirements.txt").read_text(),
+            content="requests==2.32.3",
         ),
         FileSpec(
             destination="/tmp/main.py",
