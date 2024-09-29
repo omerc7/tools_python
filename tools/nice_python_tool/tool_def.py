@@ -10,7 +10,7 @@ from . import main
 hello_tool = Tool(
     name="get_weather",
     type="docker",
-    image="python:3.12-alpine",
+    image="python:3.12",
     description="Prints the weather",
     # args=[Arg(name="name", description="Name to greet", required=True)],
     content="""
