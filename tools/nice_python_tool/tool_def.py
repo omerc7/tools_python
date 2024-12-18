@@ -13,11 +13,12 @@ hello_tool = Tool(
     description="Prints the weather for a city",
     args=[Arg(name="city", description="City name to get weather for", required=True)],
     content="""
-curl -LsSf https://astral.sh/uv/0.5.10/install.sh | sh > /dev/null 2>&1
-
+curl -LsSf https://astral.sh/uv/0.4.30/install.sh | sh > /dev/null 2>&1
+. $HOME/.cargo/env
+uv venv > /dev/null 2>&1
+. .venv/bin/activate > /dev/null 2>&1
 uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
-
-uv run python /tmp/main.py "{{ .city }}"
+python /tmp/main.py "{{ .city }}"
 """,
     with_files=[
         FileSpec(
